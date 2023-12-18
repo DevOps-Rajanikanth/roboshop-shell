@@ -36,6 +36,8 @@ fi # fi means reverse of if, indicating condition end
 
 cp mongo.repo /etc/yum.repos.d/
 
+VALIDATE $? "Mongodb.repo Copyied!!"
+
 dnf install mongodb-org -y &>>LOGFILE
 
-VALIDATE $? "Copyied!!"
+VALIDATE $? "mongodb-org dependincy installed!!"
