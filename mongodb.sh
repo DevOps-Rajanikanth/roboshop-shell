@@ -44,8 +44,8 @@ VALIDATE $? "mongodb-org dependincy installed!!"
 
 systemctl enable mongod -y &>>LOGFILE
 
-VALIDATE $? "mongod enabled successfully!!"
+VALIDATE $? "mongod enabled!!"
 
 systemctl start mongod -y &>>LOGFILE
 
-VALIDATE $? "mongod enabled successfully!!"
+VALIDATE $? "mongod start!!"
