@@ -1,8 +1,8 @@
 #!/bin/bash
 ID=$(id -u)
-R="\e[30m"
-G="\e[31m"
-Y="\E[32M"
+R="\e[31m"
+G="\e[32m"
+Y="\E[33m"
 N="\e[0m"
 
 TIMESTAMP=$(date +%F-%H-%S-%R)
@@ -19,7 +19,7 @@ VALIDATE(){
     fi
 }
 
-if [ id -ne 0 ]
+if [ $ID -ne 0 ]
   then
       echo -e "$Y Please log as a $R Root User $N"
 else
