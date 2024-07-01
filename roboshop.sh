@@ -3,7 +3,7 @@
 AMI=ami-0b4f379183e5706b9
 SG_ID=sg-03be6b9745a47cf80 #replace with your SG ID
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
-ZONE_ID=Z055248914HEBT8QV119SF
+ZONE_ID=Z055248914HEBT8QV119S
 DOMAIN_NAME="devopsrk.cloud"
 
 for i in "${INSTANCES[@]}"
