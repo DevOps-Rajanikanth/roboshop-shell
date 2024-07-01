@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AMI=ami-03265a0778a880afb
+AMI=ami-0b4f379183e5706b9
 SG_ID=sg-03be6b9745a47cf80 #replace with your SG ID
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 ZONE_ID=Z055248914HEBT8QV119SF
@@ -15,7 +15,7 @@ do
         INSTANCE_TYPE="t2.micro"
     fi
 
-    IP_ADDRESS=$(aws ec2 run-instances --image-id ami-03265a0778a880afb --instance-type $INSTANCE_TYPE --security-group-ids sg-03be6b9745a47cf80 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
+    IP_ADDRESS=$(aws ec2 run-instances --image-id ami-0b4f379183e5706b9 --instance-type $INSTANCE_TYPE --security-group-ids sg-03be6b9745a47cf80 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
     echo "$i: $IP_ADDRESS"
 
     #create R53 record, make sure you delete existing record "UPSERT"--> for ediot the existing records
